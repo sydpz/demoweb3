@@ -1,7 +1,7 @@
 
-create database if not exists web3demo;
+create database if not exists crypto_explore;
 
-CREATE TABLE `web3demo`.`hot_ranking` (
+CREATE TABLE `crypto_explore`.`hot_ranking` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Unique identifier, auto-incremented',
   `instid` varchar(100) NOT NULL COMMENT 'ID of the cryptocurrency',
   `time` timestamp NULL DEFAULT NULL COMMENT 'Timestamp of the record',
@@ -10,7 +10,7 @@ CREATE TABLE `web3demo`.`hot_ranking` (
   UNIQUE KEY `instid_time` (`time`,`instid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin AUTO_INCREMENT=1;
 
-CREATE TABLE `web3demo`.`crypto_prices` (
+CREATE TABLE `crypto_explore`.`crypto_prices` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Unique identifier for each record',
   `exchange` varchar(100) NOT NULL COMMENT 'Name of the cryptocurrency exchange',
   `instid` varchar(100) NOT NULL COMMENT 'Unique identifier for the cryptocurrency',
@@ -21,7 +21,7 @@ CREATE TABLE `web3demo`.`crypto_prices` (
   UNIQUE KEY `exchange_instid_time` (`exchange`,`instid`,`update_time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin AUTO_INCREMENT=1;
 
-CREATE TABLE `web3demo`.`crypto_trends` (
+CREATE TABLE `crypto_explore`.`crypto_trends` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Unique identifier for each record',
   `exchange` varchar(100) NOT NULL COMMENT 'Name of the cryptocurrency exchange',
   `instid` varchar(100) NOT NULL COMMENT 'Unique identifier for the cryptocurrency',
